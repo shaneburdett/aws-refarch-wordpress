@@ -1,7 +1,7 @@
 ---
 AWSTemplateFormatVersion: 2010-09-09
 
-Description: Reference Architecture to host WordPress on AWS - Creates VPC security groups
+Description: Reference Architecture to host WordPress on AWS - Creates VPC security groups -- Add IPv6
 
 Metadata:
 
@@ -110,10 +110,12 @@ Resources:
           FromPort: 443
           ToPort: 443
           CidrIp: 0.0.0.0/0
+          CidrIpv6: ::/0
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
           CidrIp: 0.0.0.0/0
+          CidrIpv6: ::/0
       VpcId:
         !Ref Vpc       
 
