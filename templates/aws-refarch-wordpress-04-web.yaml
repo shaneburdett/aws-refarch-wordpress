@@ -1,7 +1,7 @@
 ---
 AWSTemplateFormatVersion: 2010-09-09
 
-Description: Reference Architecture to host WordPress on AWS - Creates WordPress web Auto Scaling group
+Description: Reference Architecture to host WordPress on AWS - Creates WordPress web Auto Scaling group 
 
 Metadata:
 
@@ -231,6 +231,12 @@ Parameters:
     - c5.4xlarge 
     - c5.9xlarge 
     - c5.18xlarge
+    - c5d.large 
+    - c5d.xlarge 
+    - c5d.2xlarge 
+    - c5d.4xlarge 
+    - c5d.9xlarge 
+    - c5d.18xlarge
     - r3.large 
     - r3.xlarge 
     - r3.2xlarge 
