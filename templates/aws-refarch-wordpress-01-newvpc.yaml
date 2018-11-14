@@ -25,25 +25,44 @@ Metadata:
       - NumberOfAZs
       - AvailabilityZones
       - VpcCidr
-      - VpcTenancy
+      - VpcCidrIpv6
+      - VpcTenancy      
       - PublicSubnet0Cidr
+      - PublicSubnet0Cidripv6
       - PublicSubnet1Cidr
+      - PublicSubnet1Cidripv6
       - PublicSubnet2Cidr
+      - PublicSubnet2Cidripv6
       - PublicSubnet3Cidr
+      - PublicSubnet3Cidripv6
       - PublicSubnet4Cidr
+      - PublicSubnet4Cidripv6
       - PublicSubnet5Cidr
+      - PublicSubnet5Cidripv6
       - WebSubnet0Cidr
+      - WebSubnet0Cidripv6
       - WebSubnet1Cidr
+      - WebSubnet1Cidripv6
       - WebSubnet2Cidr
+      - WebSubnet2Cidripv6
       - WebSubnet3Cidr
+      - WebSubnet3Cidripv6
       - WebSubnet4Cidr
+      - WebSubnet4Cidripv6
       - WebSubnet5Cidr
+      - WebSubnet5Cidripv6
       - DataSubnet0Cidr
+      - DataSubnet0Cidripv6
       - DataSubnet1Cidr
+      - DataSubnet1Cidripv6
       - DataSubnet2Cidr
+      - DataSubnet2Cidripv6
       - DataSubnet3Cidr
+      - DataSubnet3Cidripv6
       - DataSubnet4Cidr
+      - DataSubnet4Cidripv6
       - DataSubnet5Cidr
+      - DataSubnet5Cidripv6
     ParameterLabels:
       AvailabilityZones:
         default: Availability Zones
@@ -51,6 +70,8 @@ Metadata:
         default: Number of Availability Zones
       VpcCidr:
         default: VpcCidr
+      VpcCidrIpv6:
+        default: VpcCidrIpv6
       VpcTenancy:
         default: VpcTenancy
       PublicSubnet0Cidr:
@@ -113,6 +134,15 @@ Parameters:
     Default: 10.0.0.0/16
     Description: CIDR block for the VPC
     Type: String
+  VpcCidrIpv6:
+    AllowedValues:
+      - true
+      - false
+    Default: true
+    Description: >-
+      Whether to request an Amazon-provided IPv6 CIDR block with a /56 prefix
+      length for the VPC.
+    Type: String
   VpcTenancy:
     AllowedValues:
     - default
@@ -126,11 +156,23 @@ Parameters:
     Default: 10.0.100.0/24
     Description: CIDR block for data subnet 0 located in Availability Zone 0
     Type: String
+  DataSubnet0Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 00
+    Description: IPv6 CIDR block for data subnet 0 located in Availability Zone 0
+    Type: String
   DataSubnet1Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.101.0/24
     Description: CIDR block for data subnet 1 located in Availability Zone 1
+    Type: String
+  DataSubnet1Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 01
+    Description: IPv6 CIDR block for data subnet 1 located in Availability Zone 1
     Type: String
   DataSubnet2Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -138,11 +180,23 @@ Parameters:
     Default: 10.0.102.0/24
     Description: CIDR block for data subnet 2 located in Availability Zone 2
     Type: String
+  DataSubnet2Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 02
+    Description: IPv6 CIDR block for data subnet 2 located in Availability Zone 2
+    Type: String
   DataSubnet3Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.103.0/24
     Description: CIDR block for data subnet 3 located in Availability Zone 3
+    Type: String
+  DataSubnet3Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 03
+    Description: IPv6 CIDR block for data subnet 3 located in Availability Zone 3
     Type: String
   DataSubnet4Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -150,11 +204,23 @@ Parameters:
     Default: 10.0.104.0/24
     Description: CIDR block for data subnet 4 located in Availability Zone 4
     Type: String
+  DataSubnet4Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 04
+    Description: IPv6 CIDR block for data subnet 4 located in Availability Zone 4
+    Type: String
   DataSubnet5Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.105.0/24
     Description: CIDR block for data subnet 5 located in Availability Zone 5
+    Type: String
+  DataSubnet5Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 05
+    Description: IPv6 CIDR block for data subnet 5 located in Availability Zone 5
     Type: String
   PublicSubnet0Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -162,11 +228,23 @@ Parameters:
     Default: 10.0.200.0/24
     Description: CIDR block for Public subnet 0 located in Availability Zone 0
     Type: String
+  PublicSubnet0Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 06
+    Description: IPv6 CIDR block for public subnet 0 located in Availability Zone 0
+    Type: String
   PublicSubnet1Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.201.0/24
     Description: CIDR block for Public subnet 1 located in Availability Zone 1
+    Type: String
+  PublicSubnet1Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 07
+    Description: IPv6 CIDR block for public subnet 1 located in Availability Zone 1
     Type: String
   PublicSubnet2Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -174,11 +252,23 @@ Parameters:
     Default: 10.0.202.0/24
     Description: CIDR block for Public subnet 2 located in Availability Zone 2
     Type: String
+  PublicSubnet2Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 08
+    Description: IPv6 CIDR block for public subnet 2 located in Availability Zone 2
+    Type: String
   PublicSubnet3Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.203.0/24
     Description: CIDR block for Public subnet 3 located in Availability Zone 3
+    Type: String
+  PublicSubnet3Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 09
+    Description: IPv6 CIDR block for public subnet 3 located in Availability Zone 3
     Type: String
   PublicSubnet4Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -186,11 +276,23 @@ Parameters:
     Default: 10.0.204.0/24
     Description: CIDR block for Public subnet 4 located in Availability Zone 4
     Type: String
+  PublicSubnet4Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 10
+    Description: IPv6 CIDR block for public subnet 4 located in Availability Zone 4
+    Type: String
   PublicSubnet5Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.205.0/24
     Description: CIDR block for Public subnet 5 located in Availability Zone 5
+    Type: String
+  PublicSubnet5Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 11
+    Description: IPv6 CIDR block for public subnet 5 located in Availability Zone 5
     Type: String
   WebSubnet0Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -198,11 +300,23 @@ Parameters:
     Default: 10.0.0.0/22
     Description: CIDR block for Web subnet 0 located in Availability Zone 0
     Type: String
+  WebSubnet0Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 12
+    Description: IPv6 CIDR block for public subnet 0 located in Availability Zone 0
+    Type: String
   WebSubnet1Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.4.0/22
     Description: CIDR block for Web subnet 1 located in Availability Zone 1
+    Type: String
+  WebSubnet1Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 13
+    Description: IPv6 CIDR block for public subnet 1 located in Availability Zone 1
     Type: String
   WebSubnet2Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -210,11 +324,23 @@ Parameters:
     Default: 10.0.8.0/22
     Description: CIDR block for Web subnet 2 located in Availability Zone 2
     Type: String
+  WebSubnet2Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 13
+    Description: IPv6 CIDR block for public subnet 2 located in Availability Zone 2
+    Type: String
   WebSubnet3Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.12.0/22
     Description: CIDR block for Web subnet 3 located in Availability Zone 3
+    Type: String
+  WebSubnet3Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 14
+    Description: IPv6 CIDR block for public subnet 3 located in Availability Zone 3
     Type: String
   WebSubnet4Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -222,11 +348,23 @@ Parameters:
     Default: 10.0.16.0/22
     Description: CIDR block for Web subnet 4 located in Availability Zone 4
     Type: String
+  WebSubnet4Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 15
+    Description: IPv6 CIDR block for public subnet 4 located in Availability Zone 4
+    Type: String
   WebSubnet5Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
     ConstraintDescription: CIDR block parameter must be in the form x.x.x.x/16-28
     Default: 10.0.20.0/22
     Description: CIDR block for Web subnet 5 located in Availability Zone 5
+    Type: String
+  WebSubnet5Cidripv6:
+    AllowedPattern:"^[0-9]{2}$"
+    ConstraintDescription: IPv6 network range for the subnet, in CIDR notation.
+    Default: 16
+    Description: IPv6 CIDR block for public subnet 5 located in Availability Zone 5
     Type: String
 
 Conditions:
@@ -276,8 +414,12 @@ Resources:
     Condition: AZ0
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 0, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet0Cidr
+      Ipv6CidrBlock: !Ref WebSubnet0Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -289,8 +431,10 @@ Resources:
     Condition: AZ1
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 1, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet1Cidr
+      Ipv6CidrBlock: !Ref WebSubnet1Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -302,8 +446,10 @@ Resources:
     Condition: AZ2
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 2, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet2Cidr
+      Ipv6CidrBlock: !Ref WebSubnet2Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -315,8 +461,10 @@ Resources:
     Condition: AZ3
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 3, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet3Cidr
+      Ipv6CidrBlock: !Ref WebSubnet3Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -328,8 +476,10 @@ Resources:
     Condition: AZ4
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 4, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet4Cidr
+      Ipv6CidrBlock: !Ref WebSubnet4Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -341,8 +491,10 @@ Resources:
     Condition: AZ5
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 5, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet5Cidr
+      Ipv6CidrBlock: !Ref WebSubnet5Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -392,8 +544,10 @@ Resources:
     Condition: AZ0
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 0, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet0Cidr
+      Ipv6CidrBlock: !Ref DataSubnet0Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -405,8 +559,10 @@ Resources:
     Condition: AZ1
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 1, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet1Cidr
+      Ipv6CidrBlock: !Ref DataSubnet1Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -418,8 +574,10 @@ Resources:
     Condition: AZ2
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 2, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet2Cidr
+      Ipv6CidrBlock: !Ref DataSubnet2Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -431,8 +589,10 @@ Resources:
     Condition: AZ3
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 3, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet3Cidr
+      Ipv6CidrBlock: !Ref DataSubnet3Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -444,8 +604,10 @@ Resources:
     Condition: AZ4
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 4, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet4Cidr
+      Ipv6CidrBlock: !Ref DataSubnet4Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -457,8 +619,10 @@ Resources:
     Condition: AZ5
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 5, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet5Cidr
+      Ipv6CidrBlock: !Ref DataSubnet5Cidripv6
       MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
@@ -755,6 +919,7 @@ Resources:
     Properties:
       AvailabilityZone: !Select [ 0, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet0Cidr
+      Ipv6CidrBlock: !Ref PublicSubnet0Cidripv6
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -766,8 +931,10 @@ Resources:
     Condition: AZ1
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 1, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet1Cidr
+      Ipv6CidrBlock: !Ref PublicSubnet1Cidripv6
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -779,8 +946,10 @@ Resources:
     Condition: AZ2
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 2, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet2Cidr
+      Ipv6CidrBlock: !Ref PublicSubnet2Cidripv6
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -792,8 +961,10 @@ Resources:
     Condition: AZ3
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 3, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet3Cidr
+      Ipv6CidrBlock: !Ref PublicSubnet3Cidripv6
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -805,8 +976,10 @@ Resources:
     Condition: AZ4
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 4, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet4Cidr
+      Ipv6CidrBlock: !Ref PublicSubnet4Cidripv6
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -818,8 +991,10 @@ Resources:
     Condition: AZ5
     Type: AWS::EC2::Subnet
     Properties:
+      AssignIpv6AddressOnCreation: true
       AvailabilityZone: !Select [ 5, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet5Cidr
+      Ipv6CidrBlock: !Ref PublicSubnet5Cidripv6
       MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
@@ -837,6 +1012,11 @@ Resources:
       Tags:
         - Key: Name
           Value: !Join [ '', [ 'Vpc / ', !Ref 'AWS::StackName' ] ]
+  VpcCidrBlockIpv6:
+    Type: AWS::EC2::VPCCidrBlock
+    Properties:
+      VpcId: !Ref VPC
+      AmazonProvidedIpv6CidrBlock: !Ref VpcCidrIpv6
   VpcFlowLog:
     Type: AWS::EC2::FlowLog
     Properties:
@@ -880,6 +1060,8 @@ Outputs:
     Value: !Ref Vpc
   VpcCidr:
     Value: !Ref VpcCidr
+  Ipv6CidrBlock:
+    Value: !Select [ 0, !GetAtt VPC.Ipv6CidrBlocks ]
   PublicSubnet0:
     Condition: AZ0
     Value: !Ref PublicSubnet0
