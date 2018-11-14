@@ -25,6 +25,7 @@ Metadata:
         - DatabaseMasterUsername
         - DatabaseMasterPassword
         - DatabaseName
+        - DatabaseClusterIdentifier
         - DatabaseEncrpytedBoolean
         - DatabaseCmk
         - DatabaseSecurityGroup
@@ -45,6 +46,8 @@ Metadata:
         default: Snapshot to restore from
       DatabaseName:
         default: DB Name
+      DatabaseClusterIdentifier:
+        defalut: Cluster Name
       DatabaseSecurityGroup:
         default: DB Security Group
       NumberOfSubnets:
@@ -64,21 +67,6 @@ Parameters:
   DatabaseCmk:
     Description: AWS KMS Customer Master Key (CMK) to encrypt database cluster
     Type: String
-  DatabaseInstanceType:
-    AllowedValues:
-      - db.t2.small
-      - db.t2.medium
-      - db.r3.large
-      - db.r3.xlarge
-      - db.r3.2xlarge
-      - db.r3.4xlarge
-      - db.r3.8xlarge
-      - db.r4.large
-      - db.r4.xlarge
-      - db.r4.2xlarge
-      - db.r4.4xlarge
-      - db.r4.8xlarge
-      - db.r4.16xlarge
     ConstraintDescription: Must be a valid RDS instance class.
     Default: db.t2.medium
     Description: The Amazon RDS database instance class.
@@ -99,6 +87,10 @@ Parameters:
     NoEcho: true
     Type: String
   DatabaseName:
+    AllowedPattern: ^([a-zA-Z0-9]*)$
+    Description: The Amazon RDS master database name.
+    Type: String
+  DatabaseClusterIdentifier:
     AllowedPattern: ^([a-zA-Z0-9]*)$
     Description: The Amazon RDS master database name.
     Type: String
@@ -174,8 +166,10 @@ Resources:
     Properties:
       BackupRetentionPeriod: 30
       DatabaseName: !Ref DatabaseName
+      DBClusterIdentifier: !Ref DatabaseClusterIdentifier 
       DBSubnetGroupName: !Ref DataSubnetGroup
       Engine: aurora
+      EngineMode: serverless
       KmsKeyId:
         !If [ UseAWS-ManagedCMK, !Ref 'AWS::NoValue', !Ref DatabaseCmk ]
       MasterUsername: !If [ NoSnapshot, !Ref DatabaseMasterUsername, !Ref 'AWS::NoValue']
@@ -188,32 +182,6 @@ Resources:
           Value: !Join [ '', [ 'WordPress / ', !Ref 'AWS::StackName' ] ]
       VpcSecurityGroupIds:
       - !Ref DatabaseSecurityGroup
-  DatabaseInstance0:
-    Type: AWS::RDS::DBInstance
-    DeletionPolicy: Delete
-    Properties:
-      AllowMajorVersionUpgrade: false
-      AutoMinorVersionUpgrade: true
-      DBClusterIdentifier: !Ref DatabaseCluster
-      DBInstanceClass: !Ref DatabaseInstanceType
-      DBSubnetGroupName: !Ref DataSubnetGroup
-      Engine: aurora
-      Tags:
-        - Key: Name
-          Value: !Join [ '', [ 'WordPress / ', !Ref 'AWS::StackName' ] ]
-  DatabaseInstance1:
-    Type: AWS::RDS::DBInstance
-    DeletionPolicy: Delete
-    Properties:
-      AllowMajorVersionUpgrade: false
-      AutoMinorVersionUpgrade: true
-      DBClusterIdentifier: !Ref DatabaseCluster
-      DBInstanceClass: !Ref DatabaseInstanceType
-      DBSubnetGroupName: !Ref DataSubnetGroup
-      Engine: aurora
-      Tags:
-        - Key: Name
-          Value: !Join [ '', [ 'WordPress / ', !Ref 'AWS::StackName' ] ]
   DataSubnetGroup:
     Type: AWS::RDS::DBSubnetGroup
     Properties:
@@ -249,10 +217,6 @@ Outputs:
     Value: !Ref DatabaseCluster
   DatabaseName:
     Value: !Ref DatabaseName
-  DatabaseInstance0:
-    Value: !Ref DatabaseInstance0
-  DatabaseInstance1:
-    Value: !Ref DatabaseInstance1
   DataSubnetGroup:
     Value: !Ref DataSubnetGroup
   DatabaseClusterEndpointAddress:
