@@ -414,9 +414,7 @@ Resources:
     Condition: AZ0
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
-      AssignIpv6AddressOnCreation: true
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 0, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet0Cidr
       Ipv6CidrBlock: !Ref WebSubnet0Cidripv6
@@ -431,7 +429,7 @@ Resources:
     Condition: AZ1
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 1, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet1Cidr
       Ipv6CidrBlock: !Ref WebSubnet1Cidripv6
@@ -446,7 +444,7 @@ Resources:
     Condition: AZ2
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 2, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet2Cidr
       Ipv6CidrBlock: !Ref WebSubnet2Cidripv6
@@ -461,7 +459,7 @@ Resources:
     Condition: AZ3
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 3, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet3Cidr
       Ipv6CidrBlock: !Ref WebSubnet3Cidripv6
@@ -476,7 +474,7 @@ Resources:
     Condition: AZ4
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 4, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet4Cidr
       Ipv6CidrBlock: !Ref WebSubnet4Cidripv6
@@ -491,7 +489,7 @@ Resources:
     Condition: AZ5
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 5, !Ref AvailabilityZones ]
       CidrBlock: !Ref WebSubnet5Cidr
       Ipv6CidrBlock: !Ref WebSubnet5Cidripv6
@@ -544,7 +542,7 @@ Resources:
     Condition: AZ0
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 0, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet0Cidr
       Ipv6CidrBlock: !Ref DataSubnet0Cidripv6
@@ -559,7 +557,7 @@ Resources:
     Condition: AZ1
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 1, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet1Cidr
       Ipv6CidrBlock: !Ref DataSubnet1Cidripv6
@@ -574,7 +572,7 @@ Resources:
     Condition: AZ2
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 2, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet2Cidr
       Ipv6CidrBlock: !Ref DataSubnet2Cidripv6
@@ -589,7 +587,7 @@ Resources:
     Condition: AZ3
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 3, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet3Cidr
       Ipv6CidrBlock: !Ref DataSubnet3Cidripv6
@@ -604,7 +602,7 @@ Resources:
     Condition: AZ4
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 4, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet4Cidr
       Ipv6CidrBlock: !Ref DataSubnet4Cidripv6
@@ -619,7 +617,7 @@ Resources:
     Condition: AZ5
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 5, !Ref AvailabilityZones ]
       CidrBlock: !Ref DataSubnet5Cidr
       Ipv6CidrBlock: !Ref DataSubnet5Cidripv6
@@ -931,7 +929,7 @@ Resources:
     Condition: AZ1
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 1, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet1Cidr
       Ipv6CidrBlock: !Ref PublicSubnet1Cidripv6
@@ -946,7 +944,7 @@ Resources:
     Condition: AZ2
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 2, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet2Cidr
       Ipv6CidrBlock: !Ref PublicSubnet2Cidripv6
@@ -961,7 +959,7 @@ Resources:
     Condition: AZ3
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 3, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet3Cidr
       Ipv6CidrBlock: !Ref PublicSubnet3Cidripv6
@@ -976,7 +974,7 @@ Resources:
     Condition: AZ4
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 4, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet4Cidr
       Ipv6CidrBlock: !Ref PublicSubnet4Cidripv6
@@ -991,7 +989,7 @@ Resources:
     Condition: AZ5
     Type: AWS::EC2::Subnet
     Properties:
-      AssignIpv6AddressOnCreation: true
+      AssignIpv6AddressOnCreation: !Ref VpcCidrIpv6
       AvailabilityZone: !Select [ 5, !Ref AvailabilityZones ]
       CidrBlock: !Ref PublicSubnet5Cidr
       Ipv6CidrBlock: !Ref PublicSubnet5Cidripv6
