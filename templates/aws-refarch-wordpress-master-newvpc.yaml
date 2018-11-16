@@ -30,48 +30,48 @@ Metadata:
         - CloudFrontAcmCertificate
     - Label:
         default: Network
-	Parameters:
-	- NumberOfAZs
-	- AvailabilityZones
-	- VpcCidr
-	- VpcCidrIpv6
-	- VpcTenancy      
-	- PublicSubnet0Cidr
-	- PublicSubnet0Cidripv6
-	- PublicSubnet1Cidr
-	- PublicSubnet1Cidripv6
-	- PublicSubnet2Cidr
-	- PublicSubnet2Cidripv6
-	- PublicSubnet3Cidr
-	- PublicSubnet3Cidripv6
-	- PublicSubnet4Cidr
-	- PublicSubnet4Cidripv6
-	- PublicSubnet5Cidr
-	- PublicSubnet5Cidripv6
-	- WebSubnet0Cidr
-	- WebSubnet0Cidripv6
-	- WebSubnet1Cidr
-	- WebSubnet1Cidripv6
-	- WebSubnet2Cidr
-	- WebSubnet2Cidripv6
-	- WebSubnet3Cidr
-	- WebSubnet3Cidripv6
-	- WebSubnet4Cidr
-	- WebSubnet4Cidripv6
-	- WebSubnet5Cidr
-	- WebSubnet5Cidripv6
-	- DataSubnet0Cidr
-	- DataSubnet0Cidripv6
-	- DataSubnet1Cidr
-	- DataSubnet1Cidripv6
-	- DataSubnet2Cidr
-	- DataSubnet2Cidripv6
-	- DataSubnet3Cidr
-	- DataSubnet3Cidripv6
-	- DataSubnet4Cidr
-	- DataSubnet4Cidripv6
-	- DataSubnet5Cidr
-	- DataSubnet5Cidripv6
+      Parameters:
+        - NumberOfAZs
+        - AvailabilityZones
+        - VpcCidr
+        - VpcCidrIpv6
+        - VpcTenancy      
+        - PublicSubnet0Cidr
+        - PublicSubnet0Cidripv6
+        - PublicSubnet1Cidr
+        - PublicSubnet1Cidripv6
+        - PublicSubnet2Cidr
+        - PublicSubnet2Cidripv6
+        - PublicSubnet3Cidr
+        - PublicSubnet3Cidripv6
+        - PublicSubnet4Cidr
+        - PublicSubnet4Cidripv6
+        - PublicSubnet5Cidr
+        - PublicSubnet5Cidripv6
+        - WebSubnet0Cidr
+        - WebSubnet0Cidripv6
+        - WebSubnet1Cidr
+        - WebSubnet1Cidripv6
+        - WebSubnet2Cidr
+        - WebSubnet2Cidripv6
+        - WebSubnet3Cidr
+        - WebSubnet3Cidripv6
+        - WebSubnet4Cidr
+        - WebSubnet4Cidripv6
+        - WebSubnet5Cidr
+        - WebSubnet5Cidripv6
+        - DataSubnet0Cidr
+        - DataSubnet0Cidripv6
+        - DataSubnet1Cidr
+        - DataSubnet1Cidripv6
+        - DataSubnet2Cidr
+        - DataSubnet2Cidripv6
+        - DataSubnet3Cidr
+        - DataSubnet3Cidripv6
+        - DataSubnet4Cidr
+        - DataSubnet4Cidripv6
+        - DataSubnet5Cidr
+        - DataSubnet5Cidripv6
     - Label:
         default: File System Tier
       Parameters:
