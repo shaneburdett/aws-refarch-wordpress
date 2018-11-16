@@ -30,7 +30,7 @@ Metadata:
         - CloudFrontAcmCertificate
     - Label:
         default: Network
-      Parameters:
+	Parameters:
 	- NumberOfAZs
 	- AvailabilityZones
 	- VpcCidr
