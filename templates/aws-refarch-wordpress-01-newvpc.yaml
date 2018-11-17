@@ -159,7 +159,6 @@ Parameters:
   DataSubnet0Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 00
-    Description: IPv6 CIDR block for data subnet 0 located in Availability Zone 0
     Type: String
   DataSubnet1Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -170,7 +169,6 @@ Parameters:
   DataSubnet1Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 01
-    Description: IPv6 CIDR block for data subnet 1 located in Availability Zone 1
     Type: String
   DataSubnet2Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -181,7 +179,6 @@ Parameters:
   DataSubnet2Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 02
-    Description: IPv6 CIDR block for data subnet 2 located in Availability Zone 2
     Type: String
   DataSubnet3Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -192,7 +189,6 @@ Parameters:
   DataSubnet3Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 03
-    Description: IPv6 CIDR block for data subnet 3 located in Availability Zone 3
     Type: String
   DataSubnet4Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -203,7 +199,6 @@ Parameters:
   DataSubnet4Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 04
-    Description: IPv6 CIDR block for data subnet 4 located in Availability Zone 4
     Type: String
   DataSubnet5Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -214,7 +209,6 @@ Parameters:
   DataSubnet5Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 05
-    Description: IPv6 CIDR block for data subnet 5 located in Availability Zone 5
     Type: String
   PublicSubnet0Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -225,7 +219,6 @@ Parameters:
   PublicSubnet0Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 06
-    Description: IPv6 CIDR block for public subnet 0 located in Availability Zone 0
     Type: String
   PublicSubnet1Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -236,7 +229,6 @@ Parameters:
   PublicSubnet1Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 07
-    Description: IPv6 CIDR block for public subnet 1 located in Availability Zone 1
     Type: String
   PublicSubnet2Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -247,7 +239,6 @@ Parameters:
   PublicSubnet2Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 08
-    Description: IPv6 CIDR block for public subnet 2 located in Availability Zone 2
     Type: String
   PublicSubnet3Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -258,7 +249,6 @@ Parameters:
   PublicSubnet3Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 09
-    Description: IPv6 CIDR block for public subnet 3 located in Availability Zone 3
     Type: String
   PublicSubnet4Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -269,7 +259,6 @@ Parameters:
   PublicSubnet4Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 10
-    Description: IPv6 CIDR block for public subnet 4 located in Availability Zone 4
     Type: String
   PublicSubnet5Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -280,7 +269,6 @@ Parameters:
   PublicSubnet5Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 11
-    Description: IPv6 CIDR block for public subnet 5 located in Availability Zone 5
     Type: String
   WebSubnet0Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -291,7 +279,6 @@ Parameters:
   WebSubnet0Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 12
-    Description: IPv6 CIDR block for public subnet 0 located in Availability Zone 0
     Type: String
   WebSubnet1Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -302,7 +289,6 @@ Parameters:
   WebSubnet1Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
     Default: 13
-    Description: IPv6 CIDR block for public subnet 1 located in Availability Zone 1
     Type: String
   WebSubnet2Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -312,8 +298,7 @@ Parameters:
     Type: String
   WebSubnet2Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
-    Default: 13
-    Description: IPv6 CIDR block for public subnet 2 located in Availability Zone 2
+    Default: 14
     Type: String
   WebSubnet3Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -323,8 +308,7 @@ Parameters:
     Type: String
   WebSubnet3Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
-    Default: 14
-    Description: IPv6 CIDR block for public subnet 3 located in Availability Zone 3
+    Default: 15
     Type: String
   WebSubnet4Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -334,8 +318,7 @@ Parameters:
     Type: String
   WebSubnet4Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
-    Default: 15
-    Description: IPv6 CIDR block for public subnet 4 located in Availability Zone 4
+    Default: 16
     Type: String
   WebSubnet5Cidr:
     AllowedPattern: "^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$"
@@ -345,8 +328,7 @@ Parameters:
     Type: String
   WebSubnet5Cidripv6:
     Description: IPv6 network range for the subnet, in CIDR notation.
-    Default: 16
-    Description: IPv6 CIDR block for public subnet 5 located in Availability Zone 5
+    Default: 17
     Type: String
 
 Conditions:
